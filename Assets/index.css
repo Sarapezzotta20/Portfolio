@@ -13,6 +13,74 @@
   box-sizing: border-box;
 }
 
+body,
+html {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+h1 {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-left: 180px;
+}
+
+.main-content {
+  flex-grow: 1; /* Expand to fill available space */
+  background-image: url("../images/AboutMeBackground.jpg");
+  background-size: cover; /* Ensure the image covers the whole area */
+  background-position: center; /* Center the background image */
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Grid setup for the intro-head */
+.intro-head {
+  display: grid; /* Enable grid layout */
+  grid-template-columns: 1fr; /* Define two columns with equal widths */
+  grid-template-rows: auto auto auto auto; /* Allow flexible row heights */
+  gap: 10px; /* Gap between grid items */
+
+  /* Optional centering and alignment */
+  justify-items: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  padding: 20px;
+}
+
+/* Styling for the image */
+.sara-photo {
+  width: 100%; /* Make the image take full width of its grid cell */
+  max-width: 270px; /* Optional limit for the width */
+  border-radius: 10px; /* Optional styling for rounded corners */
+}
+
+.arrow {
+  height: 40px;
+  margin-left: 150px;
+  transform: scaleX(-1);
+}
+
+.footer {
+  position: static; /* Always stay at the bottom */
+  bottom: 0; /* Align to the bottom */
+  width: 100%; /* Full width */
+  background-color: #13547a;
+  color: white;
+  text-align: right;
+  padding: 20px;
+}
+
 .sidebar {
   width: var(--sidebar-width);
   transform: translateX(calc(var(--sidebar-width) * -1));
@@ -22,7 +90,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   opacity: 0.5;
@@ -122,54 +190,4 @@
     left: 0;
     right: 0;
   }
-}
-
-body {
-  background-image: url("../images/AboutMeBackground.jpg");
-  background-size: auto;
-  background-position: center;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 200vh;
-  margin-top: 100px;
-}
-
-h1 {
-  display: flex;
-  margin: 40px 0px 80px -100px;
-}
-
-h2 {
-  font-size: 1rem;
-  padding-bottom: 10px;
-}
-
-.intro-head {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.intro {
-  display: flex;
-  flex-direction: row;
-}
-
-.arrow {
-  height: 50px;
-  margin: 10px;
-}
-
-.photo {
-  height: 600px;
-  margin-bottom: 300px;
-}
-
-.footer {
-  bottom: 0;
-  width: 100%;
-  background-color: #13547a;
-  padding: 20px;
-  margin-top: auto;
 }
