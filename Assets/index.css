@@ -18,16 +18,19 @@ html {
   display: flex;
   flex-direction: column;
   position: relative;
+  background-image: url("../images/AboutMeBackground.jpg");
+  background-size: cover;
+  background-position: center;
   margin: 0;
   padding: 0;
   height: 100vh;
-  overflow: hidden;
 }
 
 h1 {
+  font-size: x-large;
   display: flex;
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -36,33 +39,45 @@ h2 {
 }
 
 .main-content {
-  flex-grow: 1; /* Expand to fill available space */
-  background-image: url("../images/AboutMeBackground.jpg");
-  background-size: cover; /* Ensure the image covers the whole area */
-  background-position: center; /* Center the background image */
   display: flex;
-  justify-content: center;
-  padding: 20px;
+  flex-direction: row;
+  justify-items: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
 }
 
-/* Grid setup for the intro-head */
+.intro-text {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin: 50px 50px 50px 50px;
+  max-width: 600px;
+  justify-items: center;
+  align-items: center;
+}
+
+.intro-text-title {
+  font-size: 24px;
+  color: #333;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
 .intro-head {
-  display: grid; /* Enable grid layout */
+  flex-grow: 1; /* Expand to fill available space */
+  padding: 20px;
+  display: grid;
   grid-template-columns: 1fr; /* Define two columns with equal widths */
   grid-template-rows: auto auto auto auto; /* Allow flexible row heights */
   gap: 10px; /* Gap between grid items */
-
-  /* Optional centering and alignment */
-  justify-items: center; /* Center items horizontally */
-  align-items: center; /* Center items vertically */
-  padding: 20px;
+  justify-items: center;
+  align-items: center;
 }
 
-/* Styling for the image */
 .sara-photo {
-  width: 100%; /* Make the image take full width of its grid cell */
-  max-width: 270px; /* Optional limit for the width */
-  border-radius: 10px; /* Optional styling for rounded corners */
+  width: 100%;
+  max-width: 340px;
+  border-radius: 10px;
 }
 
 .arrow {
@@ -71,14 +86,26 @@ h2 {
   transform: scaleX(-1);
 }
 
-.footer {
-  position: static; /* Always stay at the bottom */
-  bottom: 0; /* Align to the bottom */
-  width: 100%; /* Full width */
-  background-color: #13547a;
+.intro-head p {
   color: white;
-  text-align: right;
-  padding: 20px;
+  font-size: small;
+}
+
+.intro-head p:hover {
+  color: aqua;
+}
+
+i {
+  display: flex;
+  color: black;
+  font-size: 20px;
+  padding-top: 40px;
+  justify-items: center;
+  align-items: center;
+}
+
+i:hover {
+  color: aqua;
 }
 
 .sidebar {
@@ -189,5 +216,26 @@ h2 {
   to {
     left: 0;
     right: 0;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .main-content {
+    flex-direction: column;
+  }
+  body,
+  html {
+    height: 150vh;
+  }
+  .sara-photo {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .sara-photo {
+    max-width: 270px;
   }
 }
